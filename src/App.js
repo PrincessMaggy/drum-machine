@@ -1,25 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+const clips = [{
+  "keyTrigger": "Q",
+  "keyCode": "81",
+  "id": "Heater-1",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+},
+{
+  "keyTrigger": "W",
+  "keyCode": "8",
+  "id": "Heater-2",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+},
+{
+  "keyTrigger": "E",
+  "keyCode": "69",
+  "id": "Heater-3",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+},
+{
+  "keyTrigger": "A",
+  "keyCode": "65",
+  "id": "Heater-4",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+},
+{
+  "keyTrigger": "S",
+  "keyCode": "83",
+  "id": "Heater-6",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+},
+{
+  "keyTrigger": "D",
+  "keyCode": "68",
+  "id": "Dsc_Oh",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+},
+{
+  "keyTrigger": "Z",
+  "keyCode": "90",
+  "id": "Kick_n_Hat",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+},
+{
+  "keyTrigger": "X",
+  "keyCode": "88",
+  "id": "RP4_KICK_1",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+},
+{
+  "keyTrigger": "C",
+  "keyCode": "67",
+  "id": "Cev_H2",
+  "url": "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+}
 
-function App() {
+]
+
+
+const App = () => {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+            <div className="text-center bg-info mh-100">
+                <h2>Drum Machine</h2>
+                { clips.map ((clip) =>
+              <Pad key={clip.id} clip ={clip} /> )}
+            </div>
+          
     </div>
   );
 }
+
+const Pad = ({clip}) =>{
+  return (
+    <button className="btn-lg btn-secondary ">
+    <audio className="clip" id={clip.keyTrigger} src={clip.url} /> </button>
+  
+  )
+}
+
+
+
+
+
+
+
 
 export default App;
