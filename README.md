@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/PrincessMaggy/rock-paper-scissors]
-- Live Site URL: [https://princessmaggy.github.io/rock-paper-scissors/]
+- Solution URL: [https://github.com/PrincessMaggy/drum-machine.git]
+- Live Site URL: [https://princessmaggy.github.io/drum-machine/]
 
 ## My process
 
@@ -49,6 +49,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [PrincessMaggy](https://www.your-site.com)
-- Frontend Mentor - [@princessmaggy](https://www.frontendmentor.io/profile/princessmaggy)
+- Website - [PrincessMaggy](https://princessmaggy.github.io/my-portfolio/)
 - Twitter - [@princessmaggy7](https://www.twitter.com/princessmaggy7)
