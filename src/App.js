@@ -69,8 +69,8 @@ const [volume, setVolume] = useState(1);
 
 
   return (
-    <div className="App">
-            <div className="">
+    <div className="App " id="drum-machine">
+            <div id="display">
                 <h2>Drum Machine</h2>
                 { clips.map ((clip) =>
               <Pad 

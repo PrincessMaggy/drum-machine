@@ -30,8 +30,15 @@ const Pad = ({clip, volume}) =>{
   }
   
     return (
-      <button onClick={playSound} className={`btn btn-secondary p-4 m-3 ${active && "btn-warning"}`}>
-      <audio className="clip" id={clip.keyTrigger} src={clip.url} />
+      <button 
+      onClick={playSound} 
+      className={`drum-pad btn-secondary p-4 m-3 ${active && "btn-warning"}`}>
+
+      <audio 
+      className="clip" 
+      id={clip.keyTrigger} 
+      src={clip.url} />
+      
       {clip.keyTrigger} </button>
     
     )
