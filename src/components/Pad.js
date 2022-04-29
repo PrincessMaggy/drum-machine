@@ -1,9 +1,9 @@
 import React,{useEffect, useState} from "react";
 
-const Pad = ({clip}) =>{
+const Pad = ({clip, volume}) =>{
     const [active, setActive] = useState(false)
   
-  useEffect(()=> {
+     useEffect(()=> {
      document.addEventListener('keydown', handleKeyPress)
      return () =>{
        document.removeEventListener('keydown',handleKeyPress)
@@ -23,6 +23,7 @@ const Pad = ({clip}) =>{
     const audioTape = document.getElementById(clip.keyTrigger);
     setActive(true);
     setTimeout(()=> setActive(false), 200);
+    audioTape.volume= volume;
     audioTape.currentTime =0;
     audioTape.play();
   }

@@ -1,5 +1,5 @@
 import Pad from "./components/Pad";
-
+import React,{useState} from "react";
 const clips = [{
   "keyTrigger": "Q",
   "keyCode": "81",
@@ -60,15 +60,31 @@ const clips = [{
 
 const App = () => {
   
+const [volume, setVolume] = useState(1);
+
+
   return (
-    <div className="App">
-            <div className="text-center bg-info mh-100">
+    <div className="App bg-info">
+            <div className="text-center mh-100">
                 <h2>Drum Machine</h2>
                 { clips.map ((clip) =>
-              <Pad key={clip.id} clip ={clip} /> )}
-              
-            </div>
-          
+              <Pad 
+              key={clip.id} 
+              clip ={clip}
+              volume={volume} /> )}
+           
+        <br/>
+        <h4>Volume</h4>
+
+        <input 
+        type="range" 
+        className="w-50" 
+        value={volume} 
+        max="1" 
+        step="0.01"
+         min="0"
+         onChange={(e)=> setVolume(e.target.value)} />
+        </div>
     </div>
   );
 }
