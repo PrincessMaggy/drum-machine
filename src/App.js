@@ -1,3 +1,5 @@
+import React,{useEffect, useState} from "react";
+
 const clips = [{
   "keyTrigger": "Q",
   "keyCode": "81",
@@ -64,6 +66,7 @@ const App = () => {
                 <h2>Drum Machine</h2>
                 { clips.map ((clip) =>
               <Pad key={clip.id} clip ={clip} /> )}
+              
             </div>
           
     </div>
@@ -71,18 +74,41 @@ const App = () => {
 }
 
 const Pad = ({clip}) =>{
+
+useEffect(()=> {
+
+  const [active, setActive] = useState(false)
+
+   document.addEventListener('keydown', handleKeyPress)
+   return () =>{
+     document.removeEventListener('keydown',handleKeyPress)
+   }
+})
+
+
+const handleKeyPress =(e) =>{
+
+  if( e.keyCode === clip.keyCode){
+    playSound();
+  }
+
+}
+
+const playSound = () =>{
+  const audioTape = document.getElementById(clip.keyTrigger);
+  setActive(true);
+  setTimeout(()=> setActive(false), 200);
+  audioTape.currentTime =0;
+  audioTape.play();
+}
+
   return (
-    <button className="btn-lg btn-secondary ">
-    <audio className="clip" id={clip.keyTrigger} src={clip.url} /> </button>
+    <button onClick={playSound} className={`btn btn-secondary p-4 m-3 ${active && "btn-warning"}`}>
+    <audio className="clip" id={clip.keyTrigger} src={clip.url} />
+    {clip.keyTrigger} </button>
   
   )
 }
-
-
-
-
-
-
 
 
 export default App;
