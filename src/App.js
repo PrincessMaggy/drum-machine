@@ -66,7 +66,7 @@ const App = () => {
   
   // state effect for volume
 const [volume, setVolume] = useState(1);
-
+const [recording, setRecording] = useState("");
 
   return (
     <div className="App " id="drum-machine">
@@ -76,7 +76,8 @@ const [volume, setVolume] = useState(1);
               <Pad 
               key={clip.id} 
               clip ={clip}
-              volume={volume} /> )}
+              volume={volume}
+              setRecording={setRecording} /> )}
            
         <br/>
         <h4>Volume</h4>
@@ -89,6 +90,12 @@ const [volume, setVolume] = useState(1);
         step="0.01"
          min="0"
          onChange={(e)=> setVolume(e.target.value)} />
+
+         <h3>{recording}</h3>
+         {recording && 
+         <>
+         <button onClick={() => setRecording("")} className="btn-danger"> clear</button>
+         </>}
         </div>
     </div>
   );

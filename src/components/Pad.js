@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 
-const Pad = ({clip, volume}) =>{
+const Pad = ({clip, volume, setRecording}) =>{
 
     // state effect for color blink
     const [active, setActive] = useState(false)
@@ -27,6 +27,7 @@ const Pad = ({clip, volume}) =>{
     audioTape.volume= volume;
     audioTape.currentTime =0;
     audioTape.play();
+    setRecording(prev => prev + clip.keyTrigger + " ");
   }
   
     return (
