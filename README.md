@@ -46,8 +46,9 @@ Users should be able to:
 - Flexbox
 - React
 
-
+## Useful Resources
+[https://www.youtube.com/watch?v=HTTaO1IjjlM]
 ## Author
 
-- Website - [PrincessMaggy](https://princessmaggy.github.io/my-portfolio/)
+- Website - [PrincessMaggy](https://princessmaggy.github.io/My-Portfolio/)
 - Twitter - [@princessmaggy7](https://www.twitter.com/princessmaggy7)
