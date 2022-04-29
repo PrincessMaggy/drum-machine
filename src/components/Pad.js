@@ -1,8 +1,11 @@
 import React,{useEffect, useState} from "react";
 
 const Pad = ({clip, volume}) =>{
+
+    // state effect for color blink
     const [active, setActive] = useState(false)
   
+    // effect for playing sound if keyboard is pressed
      useEffect(()=> {
      document.addEventListener('keydown', handleKeyPress)
      return () =>{
@@ -12,11 +15,9 @@ const Pad = ({clip, volume}) =>{
   
   
   const handleKeyPress =(e) =>{
-  
     if( e.keyCode === clip.keyCode){
       playSound();
     }
-  
   }
   
   const playSound = () =>{

@@ -1,5 +1,8 @@
 import Pad from "./components/Pad";
 import React,{useState} from "react";
+
+
+// data
 const clips = [{
   "keyTrigger": "Q",
   "keyCode": "81",
@@ -59,13 +62,15 @@ const clips = [{
 
 
 const App = () => {
+ 
   
+  // state effect for volume
 const [volume, setVolume] = useState(1);
 
 
   return (
-    <div className="App bg-info">
-            <div className="text-center mh-100">
+    <div className="App">
+            <div className="">
                 <h2>Drum Machine</h2>
                 { clips.map ((clip) =>
               <Pad 
