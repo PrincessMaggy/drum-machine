@@ -1,6 +1,8 @@
 import Pad from "./components/Pad";
 import React,{useState} from "react";
 
+// importing styles
+import './styles/app.scss';
 
 // data
 const clips = [{
@@ -84,7 +86,7 @@ const [recording, setRecording] = useState("");
 
         <input 
         type="range" 
-        className="w-50" 
+        className="volume" 
         value={volume} 
         max="1" 
         step="0.01"
@@ -94,7 +96,7 @@ const [recording, setRecording] = useState("");
          <h3>{recording}</h3>
          {recording && 
          <>
-         <button onClick={() => setRecording("")} className="btn-danger"> clear</button>
+         <button onClick={() => setRecording("")} className="clear"> clear</button>
          </>}
         </div>
     </div>

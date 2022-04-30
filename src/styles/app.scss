@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    color: rgb(54, 53, 53);
+    margin: 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3,
+h4 {
+    font-weight: 400;
+    color: gray;
+}
+
+.App {
+    transition: all 0.5s ease;
+}
+
+.volume {
+    padding: 0;
+    margin: 1em;
+}
+
+.clear {
+    padding: 0.7em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    color: black;
+}
+
+.clear:hover {
+    background-color: gold;
+}
+
+@import './pad';

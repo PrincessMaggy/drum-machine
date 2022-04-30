@@ -33,7 +33,7 @@ const Pad = ({clip, volume, setRecording}) =>{
     return (
       <button 
       onClick={playSound} 
-      className={`drum-pad btn-secondary p-4 m-3 ${active && "btn-warning"}`}>
+      className={`drum-pad prev ${active && "final"}`}>
 
       <audio 
       className="clip" 
