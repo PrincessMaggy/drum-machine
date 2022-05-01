@@ -70,6 +70,21 @@ const App = () => {
 const [volume, setVolume] = useState(1);
 const [recording, setRecording] = useState("");
 
+const playRecording =()=>{
+
+let recordArr= recording.split(" ");  
+let index= 0;
+  const interval= setInterval(()=>{
+    const audioTape = document.getElementById(recordArr[index]);
+    audioTape.currentTime =0;
+    audioTape.play();
+    index++;
+  }
+  , 300)
+  setTimeout(()=> clearInterval(interval),
+  300*recordArr.length-1)
+}
+
   return (
     <div className="App " id="drum-machine">
             <div id="display">
@@ -96,6 +111,7 @@ const [recording, setRecording] = useState("");
          <h3>{recording}</h3>
          {recording && 
          <>
+         <button className="play" onClick={playRecording}>play</button>
          <button onClick={() => setRecording("")} className="clear"> clear</button>
          </>}
         </div>

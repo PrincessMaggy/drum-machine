@@ -11,7 +11,7 @@ const Pad = ({clip, volume, setRecording}) =>{
      return () =>{
        document.removeEventListener('keydown',handleKeyPress)
      }
-  })
+  },[])
   
   
   const handleKeyPress =(e) =>{
