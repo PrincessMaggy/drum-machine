@@ -69,52 +69,66 @@ const App = () => {
   // state effect for volume
 const [volume, setVolume] = useState(1);
 const [recording, setRecording] = useState("");
+const [speed, setSpeed] = useState (0.5)
 
 const playRecording =()=>{
 
-let recordArr= recording.split(" ");  
-let index= 0;
-  const interval= setInterval(()=>{
+    let recordArr= recording.split(" ");  
+    let index= 0;
+    const interval= setInterval(()=>{
     const audioTape = document.getElementById(recordArr[index]);
     audioTape.currentTime =0;
     audioTape.play();
     index++;
   }
-  , 300)
-  setTimeout(()=> clearInterval(interval),
-  300*recordArr.length-1)
+    , speed *600)
+    setTimeout(()=> clearInterval(interval),
+    600*speed *recordArr.length-1)
 }
 
   return (
     <div className="App " id="drum-machine">
-            <div id="display">
-                <h2>Drum Machine</h2>
-                { clips.map ((clip) =>
-              <Pad 
-              key={clip.id} 
-              clip ={clip}
-              volume={volume}
-              setRecording={setRecording} /> )}
+        <div id="display">
+          <h2>Drum Machine</h2>
+          { clips.map ((clip) =>
+          <Pad 
+          key={clip.id} 
+          clip ={clip}
+          volume={volume}
+          setRecording={setRecording} /> )}
            
-        <br/>
-        <h4>Volume</h4>
+          <br/>
+          <h4>Volume</h4>
 
-        <input 
-        type="range" 
-        className="volume" 
-        value={volume} 
-        max="1" 
-        step="0.01"
-         min="0"
-         onChange={(e)=> setVolume(e.target.value)} />
 
-         <h3>{recording}</h3>
-         {recording && 
-         <>
-         <button className="play" onClick={playRecording}>play</button>
-         <button onClick={() => setRecording("")} className="clear"> clear</button>
-         </>}
-        </div>
+            <input 
+            type="range" 
+            className="volume" 
+            value={volume} 
+            max="1" 
+            step="0.01"
+            min="0"
+            onChange={(e)=> setVolume(e.target.value)} />
+
+            <br/>
+            <h3>{recording}</h3>
+            {recording && <>
+            <button className="play" onClick={playRecording}>play</button>
+            <button onClick={() => setRecording("")} className="clear"> clear</button>
+            </>}
+            <br/>
+
+            <input 
+            type="range" 
+            className="volume" 
+            value={speed} 
+            max="1.2" 
+            step="0.01"
+            min="0-1"
+            onChange={(e)=> setSpeed(e.target.value)} />
+            <h4>Speed</h4>
+          
+         </div>
     </div>
   );
 }
