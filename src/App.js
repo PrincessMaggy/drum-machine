@@ -13,7 +13,7 @@ const clips = [{
 },
 {
   "keyTrigger": "W",
-  "keyCode": "8",
+  "keyCode": "87",
   "id": "Heater-2",
   "url": "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
 },

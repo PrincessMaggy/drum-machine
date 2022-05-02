@@ -7,17 +7,19 @@ const Pad = ({clip, volume, setRecording}) =>{
   
     // effect for playing sound if keyboard is pressed
      useEffect(()=> {
-     document.addEventListener('keydown', handleKeyPress)
+     window.addEventListener('keypress', handleKeyPress);
      return () =>{
-       document.removeEventListener('keydown',handleKeyPress)
-     }
-  },[])
+       window.removeEventListener('keypress',handleKeyPress);
+     };
+     
+  })
   
   
   const handleKeyPress =(e) =>{
-    if( e.keyCode === clip.keyCode){
+    if( e.keyCode == clip.keyCode){
       playSound();
     }
+    
   }
   
   const playSound = () =>{
